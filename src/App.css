@@ -1,0 +1,132 @@
+:root {
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --primary-700: #1d4ed8;
+  --neutral-50: #f8fafc;
+  --neutral-200: #e2e8f0;
+  --neutral-600: #475569;
+  --neutral-900: #0f172a;
+
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--neutral-900);
+  background: var(--neutral-50);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 24px;
+  background:
+    radial-gradient(circle at 50% 0%, var(--primary-100) 0%, transparent 60%),
+    var(--neutral-50);
+}
+
+.landing__eyebrow {
+  margin: 0 0 16px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--primary-50);
+  border: 1px solid var(--primary-100);
+  color: var(--primary-700);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.landing__title {
+  margin: 0;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 720px;
+}
+
+.landing__subtitle {
+  margin: 24px 0 0;
+  font-size: 1.125rem;
+  color: var(--neutral-600);
+  max-width: 560px;
+}
+
+.landing__button {
+  margin-top: 40px;
+  padding: 16px 40px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary-600);
+  color: #ffffff;
+  font: inherit;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.landing__button:hover {
+  background: var(--primary-700);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
+}
+
+.landing__button:active {
+  transform: translateY(0);
+}
+
+.landing__button:focus-visible {
+  outline: 3px solid var(--primary-500);
+  outline-offset: 4px;
+}
+
+.landing__feedback {
+  margin: 24px 0 0;
+  min-height: 24px;
+  color: var(--primary-700);
+  font-weight: 600;
+  animation: fade-in 0.4s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing__button,
+  .landing__feedback {
+    transition: none;
+    animation: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .landing__button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
